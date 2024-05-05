@@ -1,0 +1,32 @@
+.home img{
+    width: 100px;
+    height: 400px;
+    object-position: center;
+    object-fit: cover;
+}
+
+.homecontent{
+    position: absolute;
+    top:50%;
+    left:62%;
+    transform: translate(-50%, -50%);
+}
+
+.homecontent h1{
+    color:brown;
+    font-size: 50px;
+    font-family: cursive;
+}
+
+.homecontent a{
+    margin-top: 10px;
+}
+
+@media screen and (max-width:600px){
+    .home img{
+        height: 500px;
+    }
+    .homecontent h1{
+        font-size: 40px;
+    }
+}

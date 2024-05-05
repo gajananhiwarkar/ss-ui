@@ -1,0 +1,10 @@
+.navbar{
+    background-color:#f3f4f6;
+
+}
+
+.navbar-light .navbar-nav .nav-item:hover{
+    color: pink;
+    font-size: 18px;
+    /* text-decoration: underline; */
+}

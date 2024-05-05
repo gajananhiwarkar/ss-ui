@@ -1,0 +1,14 @@
+.contactus{
+    background-color: white;
+}
+
+.login{
+    background-color: white;
+    padding: 60px 30px;
+}
+
+@media screen and (max-width:600px){
+    .joinnow{
+        padding: 140px 30px;
+    }
+}
