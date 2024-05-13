@@ -8,11 +8,12 @@ import Course from './pages/CourseComponent';
 import ContactUsComponent from './pages/ContactUsComponent';
 import About from './pages/AboutComponent';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ParentComponent from './test/ParentComponent';
 
 const App = () => {
     return (
         <Router>
-            <div>
+            <div className='app-container'>
                 <MenuComponent />
                 <Routes>
                     <Route path="/home" element={<HomeComponent />} />
@@ -22,7 +23,7 @@ const App = () => {
                     {/* Default route */}
                     <Route path="/" element={<HomeComponent />} />
                 </Routes>
-                <FooterComponent />
+                <FooterComponent className='footer-container'/>
             </div>
         </Router>
     );

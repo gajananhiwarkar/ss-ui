@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com'; // Import emailjs for React
 
-import '../assets/css/contact-us.css';
+import '../assets/css/contactUs.css';
 
 const ContactUsComponent = () => {
     const [form, setForm] = useState({
@@ -53,7 +53,7 @@ const ContactUsComponent = () => {
             <div className="login col-lg-4 m-auto shadow-lg">
                 <form onSubmit={handleSubmit}>
                     <div className="mb-3">
-                        <label htmlFor="fname" className="form-label">Full Name*:</label>
+                        <label htmlFor="fname" className="form-label">Full Name<span className='red'>*</span>:</label>
                         <input
                             name="fname"
                             id="fname"
@@ -66,7 +66,7 @@ const ContactUsComponent = () => {
                         />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="email" className="form-label">Email Address*:</label>
+                        <label htmlFor="email" className="form-label">Email Address<span className='red'>*</span>:</label>
                         <input
                             name="email"
                             id="email"
@@ -91,7 +91,7 @@ const ContactUsComponent = () => {
                         />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="msg" className="form-label">Message*:</label>
+                        <label htmlFor="msg" className="form-label">Message<span className='red'>*</span>:</label>
                         <textarea
                             name="msg"
                             id="msg"
