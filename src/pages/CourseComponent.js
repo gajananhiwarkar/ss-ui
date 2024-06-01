@@ -1,5 +1,6 @@
 import React from 'react';
 import CourseBoxComponent from "../components/CourseBoxComponent";
+import '../assets/css/course.css';
 
 const CourseComponent = () => {
     const courses = [

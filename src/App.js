@@ -12,7 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const App = () => {
     return (
         <Router>
-            <div>
+            <div className='app-container'>
                 <MenuComponent />
                 <Routes>
                     <Route path="/home" element={<HomeComponent />} />
@@ -22,7 +22,7 @@ const App = () => {
                     {/* Default route */}
                     <Route path="/" element={<HomeComponent />} />
                 </Routes>
-                <FooterComponent />
+                <FooterComponent className='footer-container'/>
             </div>
         </Router>
     );

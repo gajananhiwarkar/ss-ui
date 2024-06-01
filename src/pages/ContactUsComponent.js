@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import '../assets/css/contact-us.css';
+import emailjs from 'emailjs-com'; // Import emailjs for React
+
+import '../assets/css/contactUs.css';
 
 const ContactUsComponent = () => {
     const [form, setForm] = useState({
@@ -17,9 +19,33 @@ const ContactUsComponent = () => {
         }));
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        // Your form submission logic here
+
+        // Initialize emailjs
+        emailjs.init('VXIlhV7gC056h53V7');
+
+        // Send email using emailjs
+        try {
+            let response = await emailjs.send("service_ozh25er", "template_h1wrj47", {
+                fname: form.fname,
+                to_name: "ScriptSprite",
+                email: form.email,
+                mobileNumber: form.mobileNumber,
+                msg: form.msg,
+            });
+
+            alert('Message has been sent.');
+            setForm({
+                fname: '',
+                email: '',
+                mobileNumber: '',
+                msg: ''
+            });
+        } catch (error) {
+            console.error('Error sending email:', error);
+            alert('There was an error sending your message. Please try again later.');
+        }
     };
 
     return (
@@ -27,7 +53,7 @@ const ContactUsComponent = () => {
             <div className="login col-lg-4 m-auto shadow-lg">
                 <form onSubmit={handleSubmit}>
                     <div className="mb-3">
-                        <label htmlFor="fname" className="form-label">Full Name*:</label>
+                        <label htmlFor="fname" className="form-label">Full Name<span className='red'>*</span>:</label>
                         <input
                             name="fname"
                             id="fname"
@@ -36,10 +62,11 @@ const ContactUsComponent = () => {
                             className="form-control"
                             value={form.fname}
                             onChange={handleChange}
+                            required
                         />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="email" className="form-label">Email Address*:</label>
+                        <label htmlFor="email" className="form-label">Email Address<span className='red'>*</span>:</label>
                         <input
                             name="email"
                             id="email"
@@ -48,6 +75,7 @@ const ContactUsComponent = () => {
                             className="form-control"
                             value={form.email}
                             onChange={handleChange}
+                            required
                         />
                     </div>
                     <div className="mb-3">
@@ -63,16 +91,16 @@ const ContactUsComponent = () => {
                         />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="msg" className="form-label">Message*:</label>
-                        <input
+                        <label htmlFor="msg" className="form-label">Message<span className='red'>*</span>:</label>
+                        <textarea
                             name="msg"
                             id="msg"
-                            type="text"
                             placeholder="Message"
                             className="form-control"
                             value={form.msg}
                             onChange={handleChange}
-                        />
+                            required
+                        ></textarea>
                     </div>
                     <button type="submit" className="btn btn-primary col-lg-12">Submit</button>
                 </form>
