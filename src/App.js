@@ -8,7 +8,6 @@ import Course from './pages/CourseComponent';
 import ContactUsComponent from './pages/ContactUsComponent';
 import About from './pages/AboutComponent';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ParentComponent from './test/ParentComponent';
 
 const App = () => {
     return (
