@@ -22,7 +22,7 @@ function AboutComponent() {
                 <a href="https://www.facebook.com/profile.php?id=61561258229944&mibextid=ZbWKwL">Facebook</a>
                 <a href="https://youtube.com/@SCRIPTSPRITESOFTWARE?si=ExirN0nh9usNfDJy">Youtube</a>
                 <a href="#">Instagram</a>
-                <a href="#">Twitter</a>
+                <a href="https://x.com/ScriptSprite">Twitter</a>
             </div>
         </section>
     );
