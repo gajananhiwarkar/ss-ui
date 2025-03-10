@@ -19,10 +19,10 @@ function AboutComponent() {
             </p>
             <div className="follow text-center">
                 <h4>Follow Us</h4>
-                <a href="#">Facebook</a>
-                <a href="#">Youtube</a>
+                <a href="https://www.facebook.com/profile.php?id=61561258229944&mibextid=ZbWKwL">Facebook</a>
+                <a href="https://youtube.com/@SCRIPTSPRITESOFTWARE?si=ExirN0nh9usNfDJy">Youtube</a>
                 <a href="#">Instagram</a>
-                <a href="#">Twitter</a>
+                <a href="https://x.com/ScriptSprite">Twitter</a>
             </div>
         </section>
     );
